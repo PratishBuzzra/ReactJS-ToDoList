@@ -26,6 +26,12 @@ A clean, functional To‑Do application built to help me **recall and reinforce 
 
 ---
 
+##  Live Demo
+Check out the live version of the project here:  
+[Live Preview](https://react-js-to-do-list-steel.vercel.app/)
+
+---
+
 ## 💻 Getting Started
 
 To run this project locally, follow these steps:
