@@ -2,13 +2,13 @@ import React, { useContext } from 'react'
 import { TodoContext } from '../Context/TodoContext'
 
 const TodoFilter = () => {
-    const {categories, setCategory, handleClearCompleted} = useContext(TodoContext)
+    const {categories, setCategory, handleClearCompleted, category} = useContext(TodoContext)
   return (
-      <div className="flex gap-2 mt-3 items-center justify-center">
+      <div className="flex flex-wrap gap-2 mt-4 justify-center">
             {categories.map((cat, index)=>(
-              <button key={index} onClick={()=>setCategory(cat)} className="bg-[#f6d4b1] text-[#1A1A1A] px-1 py-0.5 rounded">{cat}</button>
+              <button key={index} onClick={()=>setCategory(cat)} className={`px-3 py-1 rounded text-sm ${category === cat ? 'underline underline-offset-4 font-semibold bg-[#f6d4b1] text-[#1A1A1A]' : 'bg-[#f6d4b1] text-[#1A1A1A]'}`} >{cat}</button>
             ))}
-            <button className="bg-[#f6d4b1] text-[#1A1A1A] px-1 py-0.5 rounded" onClick={()=>handleClearCompleted()}>Clear Completed</button>
+            <button className="bg-[#f6d4b1] text-[#1A1A1A] px-3 py-1 rounded text-sm" onClick={()=>handleClearCompleted()}>Clear Completed</button>
             
           </div>
   )

@@ -9,34 +9,34 @@ const TodoItem = ({doo}) => {
   return (
 selectedTodo && selectedTodo.id === doo.id ? (
               
-                <form onSubmit={handleEditData} className="flex w-full mt-4">
+                <form onSubmit={handleEditData} className="flex flex-col sm:flex-row w-full mt-2 gap-2">
             <input
-              className="flex-1 border border-r-0 rounded-l pl-2 pr-14 py-1.5 focus:outline-none "
+              className="flex-1 border rounded px-3 py-2 focus:outline-none "
               type="text"
               value={editedTodo}
               onChange={(e) => setEditedTodo(e.target.value)}
             />
             <button
               type="submit"
-              className="bg-[#f6d4b1] text-[#1A1A1A] px-2 py-2 rounded-r"
+              className="bg-[#f6d4b1] text-[#1A1A1A] px-4 py-2 rounded"
             >
               Update
             </button>
           </form>
              ):(
               <li
-                className={`${doo.completed ? 'line-through' : 'no-underline'} border rounded-lg  bg-[#f6d4b1] text-[#1A1A1A] py-2 px-4  flex justify-between`}
+                className={`${doo.completed ? 'line-through' : 'no-underline'} border rounded-lg  bg-[#f6d4b1] text-[#1A1A1A] py-2 px-4  flex justify-between items-center`}
                
               >
                 {doo.task}{" "}
                 <div className="flex items-center gap-2">
-                    <button onClick={() => handleCompleted(doo.id)}>
+                    <button title='Complete' onClick={() => handleCompleted(doo.id)}>
                   <IoCheckmarkDone className="text-xl" />
                 </button>{" "}
-                    <button onClick={() => handleEdit(doo)}>
+                    <button title='Edit' onClick={() => handleEdit(doo)}>
                   <FaEdit className="text-xl" />
                 </button>{" "}
-                <button onClick={() => handleDelete(doo.id)}>
+                <button title='Delete' onClick={() => handleDelete(doo.id)}>
                   <MdDelete className="text-xl" />
                 </button>{" "}
 
